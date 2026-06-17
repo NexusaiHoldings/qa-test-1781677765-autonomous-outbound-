@@ -9,7 +9,6 @@ from __future__ import annotations
 import importlib
 import importlib.util
 import json
-import re
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
