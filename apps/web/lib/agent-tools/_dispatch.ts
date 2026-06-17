@@ -26,6 +26,7 @@
 import type { HandlerContext, HandlerResult } from "@nexus/identity-and-access";
 import { handleEnrichProspectFromApollo } from "./enrich_prospect_from_apollo";
 import { handleGeneratePersonalizedSequence } from "./generate_personalized_sequence";
+import { handleScheduleSequenceTouch } from "./schedule_sequence_touch";
 
 type Args = Record<string, unknown>;
 
@@ -36,4 +37,5 @@ export const DOMAIN_DISPATCH: Record<
   // Build agent appends entries here per CTO-declared new_domain_tool.
   enrich_prospect_from_apollo: (ctx, a) => handleEnrichProspectFromApollo(ctx, a),
   generate_personalized_sequence: (ctx, a) => handleGeneratePersonalizedSequence(ctx, a),
+  schedule_sequence_touch: (ctx, a) => handleScheduleSequenceTouch(ctx, a),
 };
