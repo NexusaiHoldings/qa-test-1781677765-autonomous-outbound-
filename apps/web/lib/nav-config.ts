@@ -1,4 +1,19 @@
-export const NAV_CONFIG = {
+export type NavLink = {
+  label: string;
+  href: string;
+};
+
+export type NavGroup = {
+  label: string;
+  links: NavLink[];
+};
+
+export type NavConfig = {
+  primary: NavLink[];
+  groups: NavGroup[];
+};
+
+export const NAV_CONFIG: NavConfig = {
   primary: [
     { label: "Campaign Manager", href: "/campaigns" },
     { label: "ICP Setup", href: "/campaigns/new" },
@@ -8,7 +23,7 @@ export const NAV_CONFIG = {
   groups: [
     {
       label: "Settings",
-      items: [{ label: "Mailbox Connection", href: "/settings/mailbox" }],
+      links: [{ label: "Mailbox Connection", href: "/settings/mailbox" }],
     },
   ],
 };
