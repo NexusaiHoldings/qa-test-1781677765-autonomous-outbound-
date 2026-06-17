@@ -1,6 +1,5 @@
 """Unit tests for MFA API handlers."""
 import asyncio
-import base64
 import sys
 import types
 import unittest.mock as mock

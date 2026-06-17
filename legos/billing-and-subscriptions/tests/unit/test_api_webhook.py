@@ -189,7 +189,7 @@ class TestHandleWebhook(unittest.TestCase):
         js = mock.AsyncMock()
         resp = run(handle_webhook(_req(body=body, signature=sig, app=_app(db=db, js=js))))
         self.assertEqual(resp.status, 200)
-        body_text = (resp.body or b"").decode() if hasattr(resp, "body") else ""
+        (resp.body or b"").decode() if hasattr(resp, "body") else ""
         # When duplicate, dispatch is skipped; only billing.webhook_received fires with duplicate=true
         published_subjects = [c[0][0] for c in js.publish.call_args_list]
         self.assertEqual(published_subjects, ["billing.webhook_received"])
